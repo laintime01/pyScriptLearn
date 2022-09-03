@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyScript</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<!--    pyscript 添加py库-->
+    <py-env>
+        - numpy
+        - matplotlib
+    </py-env>
+</head>
+<body>
+    <py-script>
+        print("hello world")
+    </py-script>
+    <py-script>
+        a = 0
+        b = 1
+        for _ in range(100):
+            print(a)
+            a, b = b, a+b
+    </py-script>
+    <py-script>
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        x, y = np.random.random(100), np.random.random(100)
+        plt.scatter(x, y)
+        plt.title("my scatter plot")
+        plt.xlabel("Random x vars")
+        plt.ylabel("Random y vars")
+        plt.gcf()
+
+    </py-script>
+<!--py 制作用户互动的code-->
+<py-repl>
+import numpy as np
+import matplotlib.pyplot as plt
+</py-repl>
+<py-repl>
+x = np.random.random(100)
+y = np.random.random(100)
+</py-repl>
+<py-repl>
+plt.scatter(x, y)
+plt
+</py-repl>
+</body>
+</html>
